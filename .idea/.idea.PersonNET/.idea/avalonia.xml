@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="PersonNET/App.axaml" value="PersonNET/PersonNET.csproj" />
+        <entry key="PersonNET/Assets/Icons.axaml" value="PersonNET/PersonNET.csproj" />
+        <entry key="PersonNET/Controls/HamburgerMenu.axaml" value="PersonNET/PersonNET.csproj" />
+        <entry key="PersonNET/HamburgerMenu.axaml" value="PersonNET/PersonNET.csproj" />
+        <entry key="PersonNET/Views/HomePageView.axaml" value="PersonNET/PersonNET.csproj" />
+        <entry key="PersonNET/Views/MainWindow.axaml" value="PersonNET/PersonNET.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
