@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using System;
+using System.Reflection;
 
 namespace PersonNET;
 

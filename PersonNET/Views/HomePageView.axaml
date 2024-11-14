@@ -2,7 +2,135 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="PersonNET.Views.HomePageView">
-    <TextBlock>test - homepage</TextBlock>
+             xmlns:vm="clr-namespace:PersonNET.ViewModels;assembly=PersonNET"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Avalonia;assembly=LiveChartsCore.SkiaSharpView.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="576"
+             x:Class="PersonNET.Views.HomePageView"
+             x:DataType="vm:HomePageViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.ColumnSpan="2" 
+                   FontSize="24" 
+                   FontWeight="Medium"
+                   Foreground="DimGray" 
+                   Padding="0 20 0 0"
+                   Margin="23,10">Son kullanılanlar</TextBlock>
+        
+        <Grid Grid.Row="1" 
+              Grid.ColumnSpan="2" 
+              Margin="20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Border CornerRadius="25" 
+                    Background="#E0E0E0" 
+                    Margin="0,0,10,0">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" 
+                              VerticalScrollBarVisibility="Disabled">
+                    <UniformGrid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Rows="1" Columns="8">
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
+                    </UniformGrid>
+                </ScrollViewer>
+            </Border>
+            
+            <Border Grid.Column="1" 
+                    CornerRadius="25" 
+                    BorderBrush="#EEEEEE"
+                    BorderThickness="5"
+                    Background="#E0E0E0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Svg Grid.RowSpan="2" 
+                         CurrentCss="* { fill: #505050; }" 
+                         Margin="20" 
+                         MaxHeight="160" 
+                         HorizontalAlignment="Left" 
+                         VerticalAlignment="Center" 
+                         Path="../Assets/Icons/user-tie.svg"/>
+                    <StackPanel Grid.Row="0" 
+                                Grid.Column="1" 
+                                Margin="-10 25 0 0" 
+                                Orientation="Vertical">
+                        <TextBlock Foreground="#2D2D2D" FontSize="24" FontWeight="Bold" Text="Eyüp ŞENGÖZ" />
+                        <TextBlock Foreground="#505050" FontSize="20" FontWeight="Medium" Text="Yönetici" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+        </Grid>
+        
+        <Border Grid.Column="0" Margin="20 10 0 30" Grid.Row="2" Background="#E0E0E0" CornerRadius="35">
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" RowDefinitions="*,*"
+              Margin="20">
+        
+            <!-- Toplam Personel -->
+            <Border Background="#ff595e" CornerRadius="30 0 0 0">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Toplam Personel" Foreground="White" FontSize="16"/>
+                    <TextBlock Text="239" Foreground="White" FontSize="32" FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Toplam Departman -->
+            <Border Grid.Row="0" Background="#ffca3a" CornerRadius="0 30 0 0" Grid.Column="1">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Toplam Departman" Foreground="White" FontSize="16"/>
+                    <TextBlock Text="9" Foreground="White" FontSize="32" FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Bugün, Aktif P. -->
+            <Border Grid.Column="0" Background="#8ac926" CornerRadius="0 0 0 30" Grid.Row="1">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Bugün, Aktif P." Foreground="White" FontSize="16"/>
+                    <TextBlock Text="143" Foreground="White" FontSize="32" FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Bugün Çıkan P. -->
+            <Border Background="#1982c4" CornerRadius="0 0 30 0" Grid.Row="1" Grid.Column="1">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Bugün Çıkan P." Foreground="White" FontSize="16"/>
+                    <TextBlock Text="64" Foreground="White" FontSize="32" FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+        </Border>
+        <Border Grid.Column="1" 
+                Grid.Row="2" 
+                CornerRadius="35" 
+                Background="#E0E0E0" 
+                Margin="10 10 20 30">
+            <lvc:CartesianChart Series="{Binding Series}"
+                                XAxes="{Binding XAxes}"
+                                YAxes="{Binding YAxes}"
+                                Margin="10"/>
+        </Border>
+    </Grid>
 </UserControl>
