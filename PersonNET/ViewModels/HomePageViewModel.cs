@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
@@ -12,6 +13,26 @@ public class HomePageViewModel : ViewModelBase
     public IEnumerable<Axis> XAxes { get; set; }
     public IEnumerable<Axis> YAxes { get; set; }
 
+    
+    public ObservableCollection<string> RecentItems { get; } = new ObservableCollection<string>();
+    // Method to add recent items, avoiding duplicates
+    
+    
+    
+    public void AddToRecent(string itemName)
+    {
+        if (RecentItems.Contains(itemName))
+        {
+            RecentItems.Remove(itemName); // Move to the top of the list
+        }
+        RecentItems.Insert(0, itemName);
+
+        // Limit to a certain number of recent items
+        if (RecentItems.Count > 8)
+        {
+            RecentItems.RemoveAt(8);
+        }
+    }
     public HomePageViewModel()
     {
         Series = new ISeries[]

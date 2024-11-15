@@ -1,16 +1,15 @@
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using PersonNET.ViewModels;
 
 namespace PersonNET.Views;
 
-public partial class HomePageView : UserControl
+public partial class PersonnelPageView : UserControl
 {
-    public HomePageView()
+    public PersonnelPageView()
     {
         InitializeComponent();
+        DataContext = new PersonnelPageViewModel();
     }
-    
 }

@@ -7,6 +7,7 @@
              mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="576"
              x:Class="PersonNET.Views.HomePageView"
              x:DataType="vm:HomePageViewModel">
+        
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -38,18 +39,29 @@
                     Margin="0,0,10,0">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" 
                               VerticalScrollBarVisibility="Disabled">
-                    <UniformGrid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Rows="1" Columns="8">
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                        <Button CornerRadius="20" Margin="20 0 0 0" MinHeight="90" MinWidth="90" Background="DarkGray"/>
-                    </UniformGrid>
+                    <ItemsControl ItemsSource="{Binding RecentItems}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding}"
+                                        CornerRadius="20" 
+                                        Margin="20 0 0 0" 
+                                        MinHeight="90" 
+                                        MinWidth="90" 
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                        FontSize="48"
+                                        Background="DarkGray"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </ScrollViewer>
             </Border>
+
             
             <Border Grid.Column="1" 
                     CornerRadius="25" 
@@ -104,7 +116,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- Bugün, Aktif P. -->
+            <!-- Bugün, Aktif P. --> 
             <Border Grid.Column="0" Background="#8ac926" CornerRadius="0 0 0 30" Grid.Row="1">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="Bugün, Aktif P." Foreground="White" FontSize="16"/>

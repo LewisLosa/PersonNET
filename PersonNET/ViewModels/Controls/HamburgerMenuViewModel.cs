@@ -33,12 +33,17 @@ public partial class HamburgerMenuViewModel : ViewModelBase
             return;
         
         CurrentPage = viewModel;
+        
+        // Add the selected item to RecentItems in HomePageViewModel
+        if (viewModel is HomePageViewModel homePageViewModel)
+        {
+            homePageViewModel.AddToRecent(value.Label);
+        }
     }
     public ObservableCollection<ListItemTemplate> Items { get; } = new()
     {
-        new ListItemTemplate(typeof(HomePageViewModel), "HomeRegular"),
-        new ListItemTemplate(typeof(HomePageViewModel), "HomeRegular"),
-        new ListItemTemplate(typeof(HomePageViewModel), "HomeRegular"),
+        new ListItemTemplate(typeof(HomePageViewModel), "HomeRegular", "Ana Sayfa"),
+        new ListItemTemplate(typeof(PersonnelPageViewModel), "CursorHoverRegular", "Personel"),
     };
 
     [RelayCommand]
@@ -48,10 +53,10 @@ public partial class HamburgerMenuViewModel : ViewModelBase
     }
 }
 
-public class ListItemTemplate(Type type, string iconKey)
+public class ListItemTemplate(Type type, string iconKey, string Label)
 {
     public Type ModelType { get; } = type;
-    public string Label { get; } = type.Name.Replace("PageViewModel", "");
+    public string Label { get; } = Label;
     // We're using the StreamGeometry class to store the icon
     // Application.Current!.FindResource(iconKey) is used to get the icon from the App.xaml file
     public StreamGeometry ListItemIcon { get; } = (StreamGeometry)Application.Current!.FindResource(iconKey);

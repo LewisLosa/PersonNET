@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PersonNET.ViewModels;assembly=PersonNET"
+             mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="576"
+             x:Class="PersonNET.Views.PersonnelPageView"
+             x:DataType="vm:PersonnelPageViewModel">
+        
+    <DockPanel LastChildFill="True">
+        
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="70*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="95*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#E0E0E0" CornerRadius="35" Margin="20 30 20 10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="Personel Bilgileri" VerticalAlignment="Center" Margin="20" FontSize="24"/>
+                </StackPanel>
+            </Border>
+            
+            <Border Grid.Row="1" Grid.Column="0" Background="#E0E0E0" CornerRadius="35" Margin="20 10 20 30">
+                <DataGrid Name="PersonnelDataGrid" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Border>
+            
+            <Border Grid.Row="1" Grid.Column="1" CornerRadius="30" Background="#E0E0E0" Margin="0 10 20 30">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60" Command="{Binding AddUserCommand}">
+                        <PathIcon Height="32" Width="32" Data="{StaticResource PlusUser}"/>
+                    </Button>
+                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60">
+                        <PathIcon Height="32" Width="32" Data="{StaticResource MinusUser}"/>
+                    </Button>
+                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60">
+                        <PathIcon Height="32" Width="32" Data="{StaticResource PenUser}"/>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+</UserControl>

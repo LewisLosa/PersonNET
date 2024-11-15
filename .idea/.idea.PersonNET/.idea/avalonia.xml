@@ -7,8 +7,10 @@
         <entry key="PersonNET/Assets/Icons.axaml" value="PersonNET/PersonNET.csproj" />
         <entry key="PersonNET/Controls/HamburgerMenu.axaml" value="PersonNET/PersonNET.csproj" />
         <entry key="PersonNET/HamburgerMenu.axaml" value="PersonNET/PersonNET.csproj" />
+        <entry key="PersonNET/Views/AddUserWindow.axaml" value="PersonNET/PersonNET.csproj" />
         <entry key="PersonNET/Views/HomePageView.axaml" value="PersonNET/PersonNET.csproj" />
         <entry key="PersonNET/Views/MainWindow.axaml" value="PersonNET/PersonNET.csproj" />
+        <entry key="PersonNET/Views/PersonnelPageView.axaml" value="PersonNET/PersonNET.csproj" />
       </map>
     </option>
   </component>
