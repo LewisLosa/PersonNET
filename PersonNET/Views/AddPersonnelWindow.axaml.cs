@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace PersonNET.Views;
 
-public partial class AddUserWindow : Window
+public partial class AddPersonnelWindow : Window
 {
-    public AddUserWindow()
+    public AddPersonnelWindow()
     {
         InitializeComponent();
     }

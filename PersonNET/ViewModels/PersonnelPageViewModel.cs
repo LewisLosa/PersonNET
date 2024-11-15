@@ -17,7 +17,7 @@ namespace PersonNET.ViewModels
         public RelayCommand AddUserCommand { get; }
         private void OnAddUser()
         {
-            var addUserWindow = new AddUserWindow();
+            var addUserWindow = new AddPersonnelWindow();
             addUserWindow.Show();
         }
 
