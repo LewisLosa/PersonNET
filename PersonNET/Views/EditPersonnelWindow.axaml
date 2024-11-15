@@ -4,8 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="700"
         Width="600" Height="700"
-        x:Class="PersonNET.Views.AddPersonnelWindow"
-        Title="Personel Ekle">
+        x:Class="PersonNET.Views.EditPersonnelWindow"
+        Title="Personel Düzenle">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,7 +25,7 @@
         <Border Grid.Row="0" Grid.Column="0" Width="128" Height="128" BorderBrush="Black" BorderThickness="1" CornerRadius="20" Margin="0,0,0,0">
             <Image HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
-        
+         
         <StackPanel HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="1" Margin="0,30,30,30">
             <TextBlock Text="ID:" Margin="0,5"/>
             <TextBox Margin="0,5,5,5" HorizontalAlignment="Stretch"/>

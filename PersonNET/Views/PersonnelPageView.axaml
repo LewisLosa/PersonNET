@@ -26,18 +26,18 @@
             </Border>
             
             <Border Grid.Row="1" Grid.Column="0" Background="#E0E0E0" CornerRadius="35" Margin="20 10 20 30">
-                <DataGrid Name="PersonnelDataGrid" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <DataGrid Name="personnelDG" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Border>
             
             <Border Grid.Row="1" Grid.Column="1" CornerRadius="30" Background="#E0E0E0" Margin="0 10 20 30">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
-                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60" Command="{Binding AddUserCommand}">
+                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60" Command="{Binding AddPersonnelCMD}">
                         <PathIcon Height="32" Width="32" Data="{StaticResource PlusUser}"/>
                     </Button>
-                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60">
+                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60" Command="{Binding DeletePersonnelCMD}">
                         <PathIcon Height="32" Width="32" Data="{StaticResource MinusUser}"/>
                     </Button>
-                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60">
+                    <Button CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" Background="LightGray" Width="60" MinHeight="60" Command="{Binding EditPersonnelCMD}">
                         <PathIcon Height="32" Width="32" Data="{StaticResource PenUser}"/>
                     </Button>
                 </StackPanel>
